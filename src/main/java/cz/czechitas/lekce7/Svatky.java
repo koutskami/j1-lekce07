@@ -96,9 +96,9 @@ public class Svatky {
      * @param jmeno    Jméno.
      * @param denMesic Den a měsíc, kdy má dané jméno svátek.
      */
-//    public void pridejSvatek(String jmeno, MonthDay denMesic) {
-//        //TODO
-//    }
+    public void pridejSvatek(String jmeno, MonthDay denMesic) {
+        svatky.put(jmeno, denMesic);
+    }
 
     /**
      * Přidá na seznam svátků nové jméno.
@@ -107,9 +107,9 @@ public class Svatky {
      * @param den   Den v měsíci, kdy má dané jméno svátek (1–31).
      * @param mesic Měsíc, kdy má dané jméno svátek (1–12).
      */
-//    public void pridejSvatek(String jmeno, int den, int mesic) {
-//        //TODO
-//    }
+    public void pridejSvatek(String jmeno, int den, int mesic) {
+        svatky.put(jmeno, MonthDay.of(den, mesic));
+    }
 
     /**
      * Přidá na seznam svátků nové jméno.
@@ -118,16 +118,16 @@ public class Svatky {
      * @param den   Den v měsíci, kdy má dané jméno svátek (1–31).
      * @param mesic Měsíc, kdy má dané jméno svátek.
      */
-//    public void pridejSvatek(String jmeno, int den, Month mesic) {
-//        //TODO
-//    }
+    public void pridejSvatek(String jmeno, int den, Month mesic) {
+        svatky.put(jmeno, MonthDay.of(mesic, den));
+    }
 
     /**
      * Smaže jméno ze seznamu svátků.
      *
      * @param jmeno Jméno ke smazání.
      */
-//    public void smazSvatek(String jmeno) {
-//        //TODO
-//    }
+    public void smazSvatek(String jmeno) {
+        svatky.remove(jmeno);
+    }
 }
