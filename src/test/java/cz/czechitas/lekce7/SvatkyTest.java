@@ -58,7 +58,7 @@ class SvatkyTest {
      */
     @Test
     void pridatSvatekDenMesicInt() {
-        //TODO Otestuje, že je jméno v seznamu svátků a že má přiřazen správný den
+        //Otestuje, že je jméno v seznamu svátků a že má přiřazen správný den
         Svatky svatky = new Svatky();
         svatky.pridejSvatek("Marika",31,1);
         assertEquals(svatky.vratKdyMaSvatek("Marika"), MonthDay.of(1,31));
@@ -69,7 +69,10 @@ class SvatkyTest {
      */
     @Test
     void pridatSvatekDenMesicMonth() {
-        //TODO Otestuje, že je jméno v seznamu svátků a že má přiřazen správný den
+        //Otestuje, že je jméno v seznamu svátků a že má přiřazen správný den
+        Svatky svatky = new Svatky();
+        svatky.pridejSvatek("Kamil",3,Month.MARCH);
+        assertEquals(svatky.vratKdyMaSvatek("Kamil"), MonthDay.of(3,3));
     }
 
     /**
@@ -77,7 +80,10 @@ class SvatkyTest {
      */
     @Test
     void prridatSvatekMonthDay() {
-        //TODO Otestuje, že je jméno v seznamu svátků a že má přiřazen správný den
+        //Otestuje, že je jméno v seznamu svátků a že má přiřazen správný den
+        Svatky svatky = new Svatky();
+        svatky.pridejSvatek("Alice",MonthDay.of(1,15));
+        assertEquals(svatky.vratKdyMaSvatek("Alice"), MonthDay.of(1,15));
     }
 
     /**
@@ -85,6 +91,11 @@ class SvatkyTest {
      */
     @Test
     void smazatSvatek() {
-        //TODO Zkontrolovat, že po smazání bude počet svátků odpovídat novému počtu.
+        //Zkontroluje, že po smazání bude počet svátků odpovídat novému počtu.
+        Svatky svatky = new Svatky();
+        int pocetJmenPotom = svatky.getPocetJmen() - 1;
+
+        svatky.smazSvatek("Claudia");
+        assertEquals(pocetJmenPotom, svatky.getPocetJmen());
     }
 }
